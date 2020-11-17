@@ -1,0 +1,103 @@
+# Netstat
+Exibe estatísticas de protocolo e conexões de rede TCP/IP atuais.
+
+# Netstat -a 
+Exibe todas as conexões e portas de escuta.
+
+# Netstat-b
+Exibe o executável envolvido na criação de cada conexão ou
+                porta de escuta. Em alguns casos, hosts executáveis bem conhecidos
+                vários componentes independentes e, nesses casos, a
+                sequência de componentes envolvidos na criação da conexão
+                ou a porta de escuta é exibida. Nesse caso, o nome
+                do executável está localizado em [] na parte inferior, na parte superior, o componente que ele chamou
+                e assim por diante, até TCP/IP ser alcançado. Observe que essa opção
+                pode ser demorada e falhará, a menos que você tenha
+                permissões suficientes.
+ # Netstat -e
+ Exibe estatísticas de Ethernet. Isso pode ser combinado com a opção
+ 
+ # Netstat -f
+ Exibe Nomes de Domínio Totalmente Qualificados (FQDN) para endereços estrangeiros.
+ 
+ # Netstat -n 
+ Exibe endereços e números de porta no formato numérico.
+ 
+ Netstat -o
+ Exibe a ID de processo proprietário associado a cada conexão.
+ 
+ # Netstat -p proto
+ Mostra as conexões do protocolo especificado por proto; proto
+                pode ser: TCP, UDP, TCPv6 ou UDPv6.  Se usado com a opção
+                -s para exibir estatísticas por protocolo, proto pode ser:
+                IP, IPv6, ICMP, ICMPv6, TCP, TCPv6, UDP ou UDPv6.
+ # Netstat -q
+ Exibe todas as conexões, portas de escuta e portas associadas
+                TCP que não escutam. As portas associadas que não escutam podem ou não
+                estar associadas a uma conexão ativa.
+ # Netstat -r
+ Exibe a tabela de roteamento.
+ 
+ # Netstat -s
+ Exibe estatísticas por protocolo.  Por padrão, as estatísticas são
+                mostradas para IP, IPv6, ICMP, ICMPv6, TCP, TCPv6, UDP e UDPv6;
+                a opção -p pode ser usada para especificar um subconjunto do padrão.
+ # Netstat -t
+ Exibe o estado de descarregamento da conexão atual.
+ 
+ # Netstat -x
+ Exibe conexões NetworkDirect, ouvintes e pontos de extremidade compartilhados.
+ 
+ #Netstat -y
+ Exibe o modelo de conexão TCP para todas as conexões.
+ Não pode ser combinada com as outras opções.
+ 
+ # interval
+Exibe novamente as estatísticas selecionadas, pausando intervalos de segundos
+                entre cada exibição.  Pressione CTRL+C para interromper as estatísticas
+                de reexibição.  Se omitido, netstat imprimirá as informações
+                de configuração uma vez.
+                
+ # Outras Combinações:
+ 
+ Verificar Portas portas por App
+ netstat -o -n -a
+ 
+ Verificar app usado na porta 3000
+ netstat -o -n -a | findstr  ip:3000
+ 
+ ################################################################
+ COMANDOS ARP
+ ARP -s inet_addr eth_addr [if_addr]
+ARP -d inet_addr [if_addr]
+ARP -a [inet_addr] [-N if_addr] [-v]
+
+  -a            Exibe entradas ARP atuais interrogando os dados
+                de protocolo atuais. Se inet_addr for especificado, somente
+                os endereços IP e físicos do computador especificado serão
+                exibidos. Se mais de uma interface de rede usar ARP, serão
+                exibidas as entradas para cada tabela ARP.
+  -g            O mesmo que -a.
+  -v            Exibe as entradas ARP atuais no modo detalhado. Todas as
+                entradas inválidas e entradas na interface de loopback
+                serão mostradas.
+  inet_addr     Especifica um endereço Internet.
+  -N if_addr    Exibe as entradas ARP para cada interface de rede especificada
+                por if_addr.
+  -d            Exclui o host especificado por inet_addr. O inet_addr pode ser
+                marcado com o caractere * para exclusão de todos os hosts.
+  -s            Adiciona o host e associa o endereço Internet inet_addr
+                ao Endereço físico eth_addr. O Endereço físico é passado como
+                6 bytes hexadecimais separados por hífens. A entrada é
+                permanente.
+  eth_addr      Especifica um endereço físico.
+  if_addr       Caso esteja presente, especifica o endereço Internet da
+                interface cuja tabela de conversão de endereços deve ser
+                modificada.
+                Caso contrário, é usada a primeira interface aplicável.
+                             
+ 
+ 
+ 
+
+
